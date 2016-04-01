@@ -8,6 +8,8 @@ namespace TryRC_Android
 		Icon = "@mipmap/icon", Theme = "@android:style/Theme.Holo.Light")]
 	public class MainActivity : Activity
 	{
+		private RingCentral.Platform platform;
+
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -55,8 +57,25 @@ namespace TryRC_Android
 				editor.PutString("message", messageEditText.Text);
 				editor.Commit();
 
+				// send sms
+				if (platform == null) {
+					platform = new RingCentral.SDK (appKeyEditText.Text, appSecretEditText.Text,
+						serverSpinner.SelectedItemPosition == 0 ? "https://platform.devtest.ringcentral.com" : "https://platform.ringcentral.com"
+					).GetPlatform ();
+				}
+				if (!platform.LoggedIn ()) {
+					var tokens = usernameEditText.Text.Split ('-');
+					var username = tokens [0];
+					var extension = tokens.Length > 1 ? tokens [1] : null;
+					platform.Authorize (username, extension, passwordEditText.Text, true);
+				}
+				var request = new RingCentral.Http.Request ("/account/~/extension/~/sms",
+					string.Format ("{{ \"text\": \"{0}\", \"from\": {{ \"phoneNumber\": \"{1}\" }}, \"to\": [{{ \"phoneNumber\": \"{2}\" }}]}}",
+						messageEditText.Text, usernameEditText.Text, sendToEditText.Text));
+				var response = platform.Post (request);
+
 				//Show a toast
-				RunOnUiThread(() => Toast.MakeText(this, "sms sent", ToastLength.Short).Show());
+				RunOnUiThread(() => Toast.MakeText(this, "Sms sent, status code is: " + response.GetStatus (), ToastLength.Long).Show());
 			};
 		}
 	}

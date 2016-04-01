@@ -7,7 +7,7 @@ This app is created with Xamarin Studio. It demonstrates how to call RingCentral
 
 ## todo
 
-1. Send sms
+1. add screenshot
 
 
 ## Issues
