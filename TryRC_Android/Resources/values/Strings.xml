@@ -2,4 +2,8 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">TryRC_Android</string>
+	<string-array name="servers_array">
+        <item>Sandbox</item>
+        <item>Production</item>
+    </string-array>
 </resources>

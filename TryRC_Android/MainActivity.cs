@@ -18,21 +18,25 @@ namespace TryRC_Android
 			// outlets
 			var appKeyEditText = FindViewById<EditText> (Resource.Id.appKeyEditText);
 			var appSecretEditText = FindViewById<EditText> (Resource.Id.appSecretEditText);
-//			var serverSpinner = FindViewById<Spinner> (Resource.Id.serverSpinner);
+			var serverSpinner = FindViewById<Spinner> (Resource.Id.serverSpinner);
 			var usernameEditText = FindViewById<EditText> (Resource.Id.usernameEditText);
 			var passwordEditText = FindViewById<EditText> (Resource.Id.passwordEditText);
 			var sendToEditText = FindViewById<EditText> (Resource.Id.sendToEditText);
 			var messageEditText = FindViewById<EditText> (Resource.Id.messageEditText);
 			var sendSmsButton = FindViewById<Button> (Resource.Id.sendSmsButton);
 
-			// todo: populate server spinner
+			// populate server spinner
+			var adapter = ArrayAdapter.CreateFromResource (
+				this, Resource.Array.servers_array, Android.Resource.Layout.SimpleSpinnerItem);
+			adapter.SetDropDownViewResource (Android.Resource.Layout.SimpleSpinnerDropDownItem);
+			serverSpinner.Adapter = adapter;
 
 			// load data 
 			var preferencess = Application.Context.GetSharedPreferences("TryRC_Android", 
 				Android.Content.FileCreationMode.Private);
 			appKeyEditText.Text = preferencess.GetString("appKey", null) ?? "";
 			appSecretEditText.Text = preferencess.GetString ("appSecret", null) ?? "";
-			// todo: server spinner here
+			serverSpinner.SetSelection (preferencess.GetInt ("server", 0));
 			usernameEditText.Text = preferencess.GetString("username", null) ?? "";
 			passwordEditText.Text = preferencess.GetString ("password", null) ?? "";
 			sendToEditText.Text = preferencess.GetString ("sendTo", null) ?? "";
@@ -44,7 +48,7 @@ namespace TryRC_Android
 				var editor = preferencess.Edit();
 				editor.PutString("appKey", appKeyEditText.Text);
 				editor.PutString("appSecret", appSecretEditText.Text);
-				// todo: server spinner here
+				editor.PutInt("server", serverSpinner.SelectedItemPosition);
 				editor.PutString("username", usernameEditText.Text);
 				editor.PutString("password", passwordEditText.Text);
 				editor.PutString("sendTo", sendToEditText.Text);
