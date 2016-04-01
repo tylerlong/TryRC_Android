@@ -15,9 +15,44 @@ namespace TryRC_Android
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
+			// outlets
+			var appKeyEditText = FindViewById<EditText> (Resource.Id.appKeyEditText);
+			var appSecretEditText = FindViewById<EditText> (Resource.Id.appSecretEditText);
+//			var serverSpinner = FindViewById<Spinner> (Resource.Id.serverSpinner);
+			var usernameEditText = FindViewById<EditText> (Resource.Id.usernameEditText);
+			var passwordEditText = FindViewById<EditText> (Resource.Id.passwordEditText);
+			var sendToEditText = FindViewById<EditText> (Resource.Id.sendToEditText);
+			var messageEditText = FindViewById<EditText> (Resource.Id.messageEditText);
 			var sendSmsButton = FindViewById<Button> (Resource.Id.sendSmsButton);
+
+			// todo: populate server spinner
+
+			// load data 
+			var preferencess = Application.Context.GetSharedPreferences("TryRC_Android", 
+				Android.Content.FileCreationMode.Private);
+			appKeyEditText.Text = preferencess.GetString("appKey", null) ?? "";
+			appSecretEditText.Text = preferencess.GetString ("appSecret", null) ?? "";
+			// todo: server spinner here
+			usernameEditText.Text = preferencess.GetString("username", null) ?? "";
+			passwordEditText.Text = preferencess.GetString ("password", null) ?? "";
+			sendToEditText.Text = preferencess.GetString ("sendTo", null) ?? "";
+			messageEditText.Text = preferencess.GetString ("message", null) ?? "";
+
+			// when button is clicked
 			sendSmsButton.Click += delegate {
-				sendSmsButton.Text = "clicked";
+				// save user input
+				var editor = preferencess.Edit();
+				editor.PutString("appKey", appKeyEditText.Text);
+				editor.PutString("appSecret", appSecretEditText.Text);
+				// todo: server spinner here
+				editor.PutString("username", usernameEditText.Text);
+				editor.PutString("password", passwordEditText.Text);
+				editor.PutString("sendTo", sendToEditText.Text);
+				editor.PutString("message", messageEditText.Text);
+				editor.Commit();
+
+				//Show a toast
+				RunOnUiThread(() => Toast.MakeText(this, "sms sent", ToastLength.Short).Show());
 			};
 		}
 	}

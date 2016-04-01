@@ -8,6 +8,7 @@ This app is created with Xamarin Studio. It demonstrates how to call RingCentral
 ## todo
 
 1. Save user input
+1. get server spinner working
 1. Send sms
 
 
