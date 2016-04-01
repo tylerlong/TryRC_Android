@@ -5,9 +5,12 @@ Try RingCentral C# SDK with a Android app.
 This app is created with Xamarin Studio. It demonstrates how to call RingCentral C# SDK to send SMS.
 
 
+![TryRC_Android](screenshot.jpg)
+
+
 ## todo
 
-1. add screenshot
+1. update icon
 
 
 ## Issues
