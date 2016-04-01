@@ -7,8 +7,6 @@ namespace TryRC_Android
 	[Activity (Label = "TryRC_Android", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
-
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -16,15 +14,10 @@ namespace TryRC_Android
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-//			// Get our button from the layout resource,
-//			// and attach an event to it
-//			Button button = FindViewById<Button> (Resource.Id.myButton);
-//			
-//			button.Click += delegate {
-//				button.Text = string.Format ("{0} clicks!", count++);
-//			};
+			var sendSmsButton = FindViewById<Button> (Resource.Id.sendSmsButton);
+			sendSmsButton.Click += delegate {
+				sendSmsButton.Text = "clicked";
+			};
 		}
 	}
 }
-
-

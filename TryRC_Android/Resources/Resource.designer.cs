@@ -44,9 +44,6 @@ namespace TryRC_Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int button1 = 2131034119;
-			
 			// aapt resource value: 0x7f050000
 			public const int editText1 = 2131034112;
 			
@@ -64,6 +61,9 @@ namespace TryRC_Android
 			
 			// aapt resource value: 0x7f050006
 			public const int editText6 = 2131034118;
+			
+			// aapt resource value: 0x7f050007
+			public const int sendSmsButton = 2131034119;
 			
 			// aapt resource value: 0x7f050002
 			public const int spinner1 = 2131034114;
