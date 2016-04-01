@@ -6,42 +6,50 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
-        android:hint="App Key" />
+        android:id="@+id/appKeyEditText"
+        android:hint="App Key"
+        android:layout_marginTop="8dp" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:hint="App Secret" />
+        android:id="@+id/appSecretEditText"
+        android:hint="App Secret"
+        android:layout_marginTop="8dp" />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner1" />
+        android:id="@+id/serverSpinner"
+        android:layout_marginTop="8dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:hint="Username" />
+        android:id="@+id/usernameEditText"
+        android:hint="Username"
+        android:layout_marginTop="8dp" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:hint="Password" />
+        android:id="@+id/passwordEditText"
+        android:hint="Password"
+        android:layout_marginTop="8dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
-        android:hint="Send to number" />
+        android:id="@+id/sendToEditText"
+        android:hint="Send to number"
+        android:layout_marginTop="8dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:hint="Message" />
+        android:id="@+id/messageEditText"
+        android:hint="Message"
+        android:layout_marginTop="8dp" />
     <Button
         android:text="Send SMS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sendSmsButton" />
+        android:id="@+id/sendSmsButton"
+        android:layout_marginTop="8dp" />
 </LinearLayout>

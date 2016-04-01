@@ -7,13 +7,12 @@ This app is created with Xamarin Studio. It demonstrates how to call RingCentral
 
 ## todo
 
-1. Create UI
 1. Save user input
 1. Send sms
 
 
 ## Issues
 
-1. I am unable to test the app in Android Simulator. Because the simulator was stuck at booting forever.
+1. I am unable to test the app in Android Simulator. Because the simulator was stuck at booting phase forever.
 	1. I think it is a bug belongs to either Android Simulator or Xamarin Studio.
 	1. I can test the app on a physical phone, which is even better for me.

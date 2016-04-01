@@ -45,28 +45,28 @@ namespace TryRC_Android
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int editText1 = 2131034112;
+			public const int appKeyEditText = 2131034112;
 			
 			// aapt resource value: 0x7f050001
-			public const int editText2 = 2131034113;
-			
-			// aapt resource value: 0x7f050003
-			public const int editText3 = 2131034115;
-			
-			// aapt resource value: 0x7f050004
-			public const int editText4 = 2131034116;
-			
-			// aapt resource value: 0x7f050005
-			public const int editText5 = 2131034117;
+			public const int appSecretEditText = 2131034113;
 			
 			// aapt resource value: 0x7f050006
-			public const int editText6 = 2131034118;
+			public const int messageEditText = 2131034118;
+			
+			// aapt resource value: 0x7f050004
+			public const int passwordEditText = 2131034116;
 			
 			// aapt resource value: 0x7f050007
 			public const int sendSmsButton = 2131034119;
 			
+			// aapt resource value: 0x7f050005
+			public const int sendToEditText = 2131034117;
+			
 			// aapt resource value: 0x7f050002
-			public const int spinner1 = 2131034114;
+			public const int serverSpinner = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int usernameEditText = 2131034115;
 			
 			static Id()
 			{

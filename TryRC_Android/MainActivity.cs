@@ -4,7 +4,8 @@ using Android.OS;
 
 namespace TryRC_Android
 {
-	[Activity (Label = "TryRC_Android", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity (Label = "TryRC_Android", MainLauncher = true, 
+		Icon = "@mipmap/icon", Theme = "@android:style/Theme.Holo.Light")]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle savedInstanceState)
